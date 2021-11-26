@@ -1,0 +1,10 @@
+<h4>Welcome to Server Manager 4.0</h4>
+<p>Manage your Servers and Users.</p>
+<button class="btn btn-primary" (click)="onLoadServer(1)">Load Server 1</button>
+<button class="btn" (click)="login()">Login</button>
+
+<button class="btn" (click)="logout()">Logout</button>
+<hr>
+<p>Note: On clicking login, user will be able to navigate child routes of servers (OR including servers itself if
+    canActivate is used instead of canActivateChild guard).<br>
+    Else on clicking logout, user will not be able to navigate child routes of servers and vice versa</p>

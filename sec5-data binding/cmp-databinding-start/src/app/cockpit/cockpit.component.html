@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+    <!-- Instead of two-way binding, we can also use localReferences ( by using #<anyName> ) in template (ONLY) to pass 
+  the input element to typescript code on occuring any event -->
+    <input type="text" class="form-control" #serverNameInputRef>
+    <label>Server Content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <!-- Instead of two-way binding and passing values to typescript code via references & events, 
+      we can also use ViewChild decorator for passing data. 
+      For that, we have to add localReference in input field and add it in ViewChild decorator in ts code -->
+    <input type="text" class="form-control" #serverContentInputRef>
+    <br>
+    <!-- As we set a local reference on serverName input, we pass it to ts code on clicking any of these buttons -->
+    <button class="btn btn-primary" (click)="onAddServer(serverNameInputRef)">Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInputRef)">Add Server Blueprint</button>
+  </div>
+</div>

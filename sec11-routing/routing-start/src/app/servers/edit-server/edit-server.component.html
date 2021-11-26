@@ -1,0 +1,22 @@
+<h4 *ngIf="isEditable == false; else showEditOption">You are not allowed to edit the server</h4>
+<ng-template #showEditOption>
+
+  <div class="form-group">
+    <label for="name">Server Name</label>
+    <input type="text" id="name" class="form-control" [(ngModel)]="serverName">
+  </div>
+  <div class="form-group">
+    <label for="status">Server Status</label>
+    <select id="status" class="form-control" [(ngModel)]="serverStatus">
+      <option value="online">Online</option>
+      <option value="offline">Offline</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="onUpdateServer()">Update Server</button>
+  <div style="display: inline;">
+    <p >Try to change page after making changings and without clicking update button.
+      CanDeactivate Guard will give you pop-up warning!</p>
+  </div>
+
+
+</ng-template>

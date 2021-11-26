@@ -1,0 +1,21 @@
+<!-- event binding: here input property work as onChange event -->
+<label>Event Binding</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<!-- for making two way binding (event & property): -->
+<label>Two Way Data Binding</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<p>{{ serverName }}</p>
+<!-- disabbled property is made dynamic with the use of [], and this is binded with isAllowed: bool  -->
+<button class="btn btn-primary" [disabled]="!isAllowed" (click)="onClickAddServerBtn()">
+  Add Server
+</button>
+
+<p>
+  Add server allow status: {{ isAllowed }}</p>
+<!-- the (*) means that this directive (ngIf) can update DOM structure -->
+<!-- else we set a tag which will be build in ng-template -->
+<p *ngIf="isServerAdded == true; else noServer">{{ serverStatusString }}</p>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+<p>The {{ "Server" }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
