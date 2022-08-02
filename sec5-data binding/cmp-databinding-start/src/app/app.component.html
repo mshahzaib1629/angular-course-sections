@@ -7,8 +7,8 @@
         <!-- the code b/w opening and closing tags of app-server-element will be mounted at 
           the place of ng-content tag in that component -->
         <p>
-          <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-          <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
         </p>
       </app-server-element>
     </div>
