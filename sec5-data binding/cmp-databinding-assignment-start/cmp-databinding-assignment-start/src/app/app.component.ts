@@ -7,19 +7,14 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   intervalValues: Array<number> = [];
-  interval;
-  onStartPressed() {
-    console.log('start button pressed');
-    this.interval = setInterval(() => {
-      this.intervalValues.push(this.intervalValues.length + 1);
-      console.log(this.intervalValues.length);
-    }, 1000);
+  addNumber(number: number) {
+    console.log('number received: ', number);
+    this.intervalValues.push(number);
   }
 
-  onEndPressed () {
-    clearInterval(this.interval);
+  onClearPressed () {
+    console.log('clear pressed');
     this.intervalValues = [];
-    console.log('end button pressed');
 
   }
 }

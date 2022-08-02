@@ -14,7 +14,7 @@
       </ol>
     </div>
     
-    <app-game-control (startPressed) = "onStartPressed()" (endPressed) = "onEndPressed()"></app-game-control>
+    <app-game-control (addNum) = "addNumber($event)" (clearPressed) = "onClearPressed()"></app-game-control>
   </div>
   <br>
   <div class="col-xs-12" *ngFor="let value of intervalValues">
