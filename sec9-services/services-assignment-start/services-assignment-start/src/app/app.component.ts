@@ -16,7 +16,9 @@ export class AppComponent implements OnInit{
    ngOnInit(): void {
      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
      //Add 'implements OnInit' to the class.
-     this.toActiveCount = this.usersService.toActiveCount;
-     this.toInActiveCount = this.usersService.toInActiveCount;
+     this.usersService.statusChange.subscribe(()=> {
+      this.toActiveCount = this.usersService.toActiveCount;
+      this.toInActiveCount = this.usersService.toInActiveCount;
+     })
    }
 }
