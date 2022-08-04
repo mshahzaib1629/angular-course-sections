@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       // to filter, map, OR refine data before reaching to the subscription
       // Pipe can have unlimited operators in it
       filter((data: number) => {
-        return data > 0;
+        return data % 2 === 0;
       }),
       map((data: number) => {
         return "Round-" + (data + 1);
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
 
     // this.firstObsSubscription = this.customIntervalObservable.subscribe(
-    this.firstObsSubscription = obsWithOperators.subscribe(
+    this.firstObsSubscription =  obsWithOperators.subscribe(
       // handling updates from observable in 1st param of subscribe
       (data) => {
         console.log(data);
