@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
   templateUrl: "./edit-server.component.html",
   styleUrls: ["./edit-server.component.css"],
 })
-export class EditServerComponent implements OnInit {
+export class EditServerComponent implements OnInit, CanComponentDeactivate {
   server: { id: number; name: string; status: string };
   serverName = "";
   serverStatus = "";
@@ -48,7 +48,7 @@ export class EditServerComponent implements OnInit {
     this.router.navigate(["../"], { relativeTo: this.route });
   }
 
-  // this function defines our logic of canDeactivate guard. 
+  // this function defines our logic of canDeactivate guard.
   // It is defined by implementing our own defined interface i.e. CanComponentDeactivate
   canDeactivateMethod(): boolean | Observable<boolean> | Promise<boolean> {
     if (!this.isEditable) {
